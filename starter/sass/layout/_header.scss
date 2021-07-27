@@ -1,0 +1,44 @@
+.header {
+  height: 95vh;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba($color-primary-light, 0.8),
+      rgba($color-primary-dark, 0.8)
+    ),
+    url(../img/hero.jpg);
+  background-size: cover;
+  background-position: top;
+  position: relative;
+
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  /* clip-path: polygon(x y, x y, x y, x y); coordinates x -axis y-axis, clockworkwise*/
+  /* clip-path: polygon(50% 0, 50% 0, 100% 100%, 0 100%); TRIANGOLO
+ */
+
+  &__logo-box {
+    position: absolute;
+    top: 4rem; /* was 40px etc etc */
+    left: 4rem;
+
+    &:hover {
+      &__logo {
+        animation: moveInRight 4s ease-out;
+        /* When we were hovering over the logo and animating it, the logo wanted to move; but when it did, our hover state was lost since the element was no longer under our active mouse.  Essentially, the logo was 'freaking' out because it didn't know whether to animate / move or stay statically positioned, thus, we were left with an ugly, Shrodinger flicker effect.
+        
+        When we hover over the container (logo-box) instead, the logo is free to move as intended since our container remains static.  Now, I invite you to hover over the logo-box, then quickly move your cursor out of the boundaries of the box.  You will see the animation end abruptly--this is what was happening to our logo before making our changes. */
+      }
+    }
+    &__logo {
+      height: 3.5rem;
+    }
+  }
+
+  &__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+}
