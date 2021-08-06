@@ -29,9 +29,9 @@
         When we hover over the container (logo-box) instead, the logo is free to move as intended since our container remains static.  Now, I invite you to hover over the logo-box, then quickly move your cursor out of the boundaries of the box.  You will see the animation end abruptly--this is what was happening to our logo before making our changes. */
       }
     }
-    &__logo {
-      height: 3.5rem;
-    }
+  }
+  &__logo {
+    height: 3.5rem;
   }
 
   &__text-box {
