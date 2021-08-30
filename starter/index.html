@@ -16,6 +16,7 @@
 
 <body>
 
+    <!-- art direction and density switching for responsive images -->
 
     <div class="navigation">
         <input type="checkbox" id="navi-toggle" class="navigation__checkbox">
@@ -342,7 +343,14 @@
 
     <footer class="footer">
         <div class="footer__logo-box">
-            <img src="img/logo-green-2x.png" alt="full logo" class="footer__logo">
+            <!-- srcset for 2 images -->
+            <!-- <img srcset="img/logo-green-1x.png 1x, img/logo-green-2x.png 2x" alt="full logo" class="footer__logo"> -->
+
+<!-- art direction  -->
+            <picture class="footer__logo">
+                <source srcset="img/logo-green-small-1x.png 1x, img/logo-green-small-2x.png 2x" media="(max-width: 37.5em)">
+                <img srcset="img/logo-green-1x.png 1x, img/logo-green-2x.png 2x" alt="logo">
+            </picture>
         </div>
         <div class="row">
             <div class="col-1-of-2">

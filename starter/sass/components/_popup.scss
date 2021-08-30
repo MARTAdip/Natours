@@ -28,11 +28,24 @@
     transform:  translate(-50%, -50%) scale(0);  // i have to repeat the trasnformation, because can have only 1 tranform per block so i have to chain them
 
     transition: all 0.5s 0.2s;
+
+    @include respond(phone) {
+      width: 100%;
+      top: 68%;
+      left: 50%;
+      bottom: -100%;
+      display: block;
+    }
   }
 
   &__left {
     width: 33.33333%;
     display: table-cell;
+
+    @include respond(phone) {
+      width: 88%;
+      text-align: center;
+    }
   }
 
   &__right {
@@ -40,11 +53,24 @@
     display: table-cell;
     vertical-align: middle;
     padding: 3rem 5rem;
+
+    @include respond(phone) {
+      padding: 1rem 2rem;
+      display: initial;
+
+        h3 {
+          padding: 1.5rem;
+        }
+    }
   }
 
   &__img {
     display: block;
     width: 100%;
+    @include respond(phone) {
+      display: inline-block;
+      width: 143px;
+    }
   }
 
   &__text {
@@ -55,6 +81,10 @@
     column-rule: 1px solid $color-gray-light-2;
 
     hyphens: auto;
+    @include respond(phone) {
+      column-count: 1;
+      padding: 2rem;
+    }
   }
 
   // POPUP FUNCTIONALITY
@@ -87,6 +117,12 @@
     }
     &:hover {
       color: $color-primary;
+    }
+  }
+
+  .btn.btn--green {
+    @include respond(phone) {
+      margin-left: 20px;
     }
   }
 }
