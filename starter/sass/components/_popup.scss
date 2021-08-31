@@ -7,12 +7,19 @@
   top: 0;
   left: 0;
   z-index: 9999;
-
+  
   opacity: 0; // if i only use opacity 0 the content is still there , so i need to specify visibility hidden
   visibility: hidden;
   transition: all 0.3s;
   
- 
+
+  // feature query
+  @supports(-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px)) {
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);  // add a filter behind an element
+    background-color: rgba($color-black, 0.3);
+  }
+
 
   &__content {
     @include center-horizontal-vertical;
