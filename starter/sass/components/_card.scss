@@ -173,7 +173,10 @@
 
 
 
-  @include respond(tab-port) {
+  // @include respond(tab-port) {
+    @media  only screen and (max-width: 56.25em),
+            only screen and (hover:none ){   // for devices with no hover (meaning touch devices), we can write so to avoid the hover effect hover: none, or opposite would be hover:hover, and the style thats's in here (originally thought for tab-port only) applies to bigger resolution's screen, like iPad pro, and still be a touch device.
+
       height: auto;
       border-radius: 3px;
       background-color: $color-white;
@@ -221,4 +224,6 @@
         font-size: 4rem;
       }
     }
+
+   
 }

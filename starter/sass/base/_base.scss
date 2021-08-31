@@ -34,4 +34,10 @@ body {
   }
 }
 
+::selection {  // change the behaviour of the text selected by the user 
+  background-color: $color-primary;
+  color: $color-white; 
+}
+
+
 // REM are always in relation to the root font-size
